@@ -4,12 +4,11 @@ import container from '../assets/image/container.png';
 import logo from '../assets/icon/titleIcon.svg';
 import StepButton from 'components/common/StepButton';
 import StepView from 'components/common/StepView';
-import { wishDate } from 'atoms/atom';
+import { wishDate, wishItem } from 'atoms/atom';
 import { useRecoilState } from 'recoil';
 
 function Step3() {
   const [_wishDate, setWishDate] = useRecoilState(wishDate);
-
   const test = (e) => {
     setWishDate(e.target.value);
   };

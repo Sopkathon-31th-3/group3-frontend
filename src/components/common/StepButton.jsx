@@ -10,7 +10,9 @@ function StepButton() {
   const stepNum = Number(location.pathname.slice(-1));
 
   const onClickPrev = () => {
-    if (stepNum > 1) {
+    if (stepNum === 1) {
+      navigate(`/`);
+    } else if (stepNum > 1) {
       navigate(`/step${stepNum - 1}`);
     }
   };
