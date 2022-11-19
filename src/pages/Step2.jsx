@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import container from '../assets/image/container.png';
+import logo from '../assets/icon/titleIcon.svg';
 import StepButton from 'components/common/StepButton';
 import StepView from 'components/common/StepView';
 import { wishPrice } from '../atoms/atom';
@@ -11,7 +12,6 @@ function Step2() {
 
   const handlePrice = (e) => {
     const newPrice = Number(e.target.value);
-    // setPriceState(newPrice.toLocaleString());
     setWishPrice(newPrice);
   };
 
@@ -19,7 +19,7 @@ function Step2() {
     <StyledRoot>
       <Container>
         <Main>
-          <Title>소원을 말해보세영</Title>
+          <StTitle src={logo} alt='title' />
           <Question>
             근데 그거...
             <br /> 얼마짜리더라?
@@ -104,4 +104,13 @@ const InputBox = styled.input`
   font-family: Galmuri11;
   /* text-align: center; */
   padding-left: 2rem;
+`;
+
+const StTitle = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20.5rem;
+  height: 2rem;
 `;

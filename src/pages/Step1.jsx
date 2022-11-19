@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import container from '../assets/image/container.png';
+import logo from '../assets/icon/titleIcon.svg';
 import StepButton from 'components/common/StepButton';
 import StepView from 'components/common/StepView';
 import { wishItem } from 'atoms/atom';
@@ -16,7 +17,7 @@ function Step1() {
     <StyledRoot>
       <Container>
         <Main>
-          <Title>소원을 말해보세영</Title>
+          <StTitle src={logo} alt='title' />
           <Question>
             지금 가~장
             <br /> 갖고 싶은게 뭐야?
@@ -78,4 +79,13 @@ const InputBox = styled.input`
   font-family: Galmuri11;
   text-align: center;
   padding-bottom: 1rem;
+`;
+
+const StTitle = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20.5rem;
+  height: 2rem;
 `;
