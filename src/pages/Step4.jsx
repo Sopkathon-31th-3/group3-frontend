@@ -17,18 +17,19 @@ import { useLocation } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 function Step4() {
-  const foodImgList = [
-    chicken,
-    boonguhppang,
-    coffee,
-    gookbap,
-    burger,
-    ttheokbokki,
-    gimbap,
-    hotdog,
-    pizza,
-    ramen,
+  const foodList = [
+    { src: chicken, name: '뿌링클', price: 22000 },
+    { src: boonguhppang, name: '붕어빵', price: 500 },
+    { src: coffee, name: '스벅 아아', price: 4500 },
+    { src: gookbap, name: '순대 국밥', price: 9000 },
+    { src: burger, name: '빅맥세트', price: 7500 },
+    { src: ttheokbokki, name: '엽기 떡볶이', price: 14000 },
+    { src: gimbap, name: '김가네 김밥', price: 3900 },
+    { src: hotdog, name: '핫도그', price: 1800 },
+    { src: pizza, name: '피자스쿨', price: 10900 },
+    { src: ramen, name: '신라면', price: 820 },
   ];
+
   const location = useLocation();
   const stepNum = location.pathname.slice(-1);
   return (
@@ -41,11 +42,11 @@ function Step4() {
           애정하는 음식이...뭐였지?
         </Question>
         <OptionArea>
-          {foodImgList.map((foodImg, index) => (
+          {foodList.map((foodLists, index) => (
             <OptionBackground>
-              <FoodImg src={foodImg} key={index} />
-              <p>뿌링클</p>
-              <span>20000원</span>
+              <FoodImg src={foodLists.src} key={index} />
+              <p>{foodLists.name}</p>
+              <span>{foodLists.price}원</span>
             </OptionBackground>
           ))}
         </OptionArea>
